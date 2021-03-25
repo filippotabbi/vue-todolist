@@ -13,23 +13,24 @@
       <h1>Todo Today</h1>
     </header>
     <main>
-      <div class="container-list">
-        <ul id="app">
-        <li v-for="todo in event">
-          <span class="title">{{ todo.title }}</span>
-          <span class="icon"> <i class="fas fa-edit"></i>
-          <i class="fas fa-check"></i> </span>
+      <div id="app" class="container-list">
+        <ul>
+        <li v-for="(todo, i) in eventcomputed">
+          <span class="title" :class="(todo.status == 'done') ? 'line-tr' : ''">{{ todo.title }}</span>
+          <span class="icon"> <i class="fas fa-edit" v-if="todo.status != 'done'"></i>
+          <i class="fas fa-check" v-if="todo.status != 'done'" @click= "check(i)"></i>
+          <i class="fas fa-trash"  v-if="todo.status == 'done'" @click= "remove(i)"></i></span>
         </li>
         </ul>
         <input v-model="inputTxt"
-        type="text" class="write"
-         placeholder="Inserisci un qualcosa da fare" @keyup.enter="add">
+          type="text" class="write"
+          placeholder="Inserisci un qualcosa da fare" @keyup.enter="aggiungi" >
       </div>
 
     </main>
     <footer>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="./assets/js/main.js" charset="utf-8"></script>
   </body>
 </html>
