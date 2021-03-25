@@ -1,0 +1,42 @@
+h1{
+  text-align: center;
+}
+.container-list{
+  width: 500px;
+  height: 500px;
+  background-color: lightgrey;
+  margin: 0 auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+}
+.icon{
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  position: relative;
+  bottom: 20px;
+  right: 30px;
+}
+i{
+  margin: 0 15px;
+  font-size: 24px;
+}
+.fa-edit{
+  cursor: pointer;
+  color: blue;
+}
+.fa-check{
+  color: green;
+  cursor: pointer;
+}
+input{
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 2px solid blue;
+}
